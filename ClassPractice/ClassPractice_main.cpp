@@ -2,18 +2,22 @@
 #include "StudentInfo.h"
 #include "Date.h"
 #include "StringClass.h"
+#include "Point2D.h"
+
 
 void Main_coordinate();
 void Main_studentInfo();
 void Main_date();
 void Main_stringClass();
+void Main_point2DClass();
 
 int main()
 {
     //Main_Coordinate();
     //Main_studentInfo();
     //Main_date();
-    Main_stringClass();
+    //Main_stringClass();
+    Main_point2DClass();
 }
 
 void Main_coordinate()
@@ -59,4 +63,17 @@ void Main_stringClass()
 
     StringClass str{ "This is String Class!!!" };
     str.Print();
+}
+
+void Main_point2DClass()
+{
+    // 연산자 오버로딩 연습
+    Point2D pt1{ 1,2 };
+    std::cout << pt1 + Point2D{ 1, 5 } << Point2D{ 4, 11 };
+
+    Point2D pt2 = pt1++;
+    std::cout << pt2;
+    std::cout << pt1;
+    std::cout << pt2++;
+    std::cout << ++pt2;
 }
