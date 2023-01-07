@@ -3,6 +3,7 @@
 #include "Date.h"
 #include "StringClass.h"
 #include "Point2D.h"
+#include "Dog.h"
 
 
 void Main_coordinate();
@@ -10,6 +11,7 @@ void Main_studentInfo();
 void Main_date();
 void Main_stringClass();
 void Main_point2DClass();
+void Main_Animal_Inherit();
 
 int main()
 {
@@ -17,7 +19,8 @@ int main()
     //Main_studentInfo();
     //Main_date();
     //Main_stringClass();
-    Main_point2DClass();
+    //Main_point2DClass();
+    Main_Animal_Inherit();
 }
 
 void Main_coordinate()
@@ -76,4 +79,15 @@ void Main_point2DClass()
     std::cout << pt1;
     std::cout << pt2++;
     std::cout << ++pt2;
+}
+
+void Main_Animal_Inherit()
+{
+    // 클래스 상속 연습 및 상향변환
+    Dog happy;
+    happy.Sound();
+    happy.Hand();
+
+    std::unique_ptr<Animal> animal{ std::make_unique<Dog>() };
+    animal->Sound();
 }
